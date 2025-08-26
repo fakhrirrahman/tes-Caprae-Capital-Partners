@@ -12,7 +12,7 @@ class LeadController extends Controller
     {
         $query = Lead::query();
 
-        if ($request->has('min_score')) {
+        if ($request->filled('min_score')) {
             $query->where('score', '>=', $request->min_score);
         }
 
